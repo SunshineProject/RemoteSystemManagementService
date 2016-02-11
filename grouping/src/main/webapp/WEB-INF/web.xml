@@ -1,0 +1,54 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+
+<web-app>
+	<display-name>grouping</display-name><!--  
+	<filter>
+   	 	<filter-name>ShiroFilter</filter-name>
+   		 <filter-class>org.apache.shiro.web.servlet.IniShiroFilter</filter-class>
+   		 <init-param>
+       		 <param-name>configPath</param-name>
+       		 <param-value>shiro.ini</param-value>
+    	</init-param>
+	</filter>-->
+	<servlet>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.resourceConfigClass</param-name>
+			<param-value>com.sun.jersey.api.core.PackagesResourceConfig</param-value>
+		</init-param>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>eu.sinergis.sunshine.grouping.rest</param-value>
+		</init-param>
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>PATH_LOG</param-name>
+			<param-value>WEB-INF/</param-value>
+		</init-param>		
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- <servlet>
+  <servlet-name>Hateoas</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>javax.ws.rs.Application</param-name>
+      <param-value>com.example.LibraryApplication</param-value>
+    </init-param>
+</servlet> -->
+	
+	<servlet-mapping>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<!--  <welcome-file>index.jsp</welcome-file> -->
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

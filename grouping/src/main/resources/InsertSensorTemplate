@@ -1,0 +1,90 @@
+<n52sps:InsertSensorOffering xmlns:sps="http://www.opengis.net/sps/2.0"
+	xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:swe="http://www.opengis.net/swe/2.0"
+	xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0"
+	xmlns:n52sps="http://www.52north.org/schemas/sps/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.52north.org/schemas/sps/v2 http://www.52north.org/schemas/sps/v2/insert-sensor-offering.xsd">
+	<n52sps:SensorOfferingData>
+		<n52sps:OfferingIdentifier>$offering
+		</n52sps:OfferingIdentifier>
+		<n52sps:OfferingDescription>$offeringDescription</n52sps:OfferingDescription>
+		<n52sps:ObservableArea>
+			<n52sps:byPolygon>
+				<gml:Polygon gml:id="gid02">
+					<gml:exterior>
+						<gml:LinearRing>
+							<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">$point1</gml:pos>
+							<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">$point2</gml:pos>
+							<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">$point3</gml:pos>
+							<gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">$point4</gml:pos>
+						</gml:LinearRing>
+					</gml:exterior>
+				</gml:Polygon>
+			</n52sps:byPolygon>
+		</n52sps:ObservableArea>
+	</n52sps:SensorOfferingData>
+	<n52sps:SensorInstanceData>
+		<n52sps:Procedure>$procedure
+		</n52sps:Procedure>
+		<n52sps:SensorPluginType>$pluginName</n52sps:SensorPluginType>
+		<ows:Reference xlink:href="http://sunshine.sinergis.it/SOS40/soap"
+			xlink:role="http://www.opengis.net/spec/SPS/2.0/referenceType/ServiceURL"
+			xlink:title="Sensor Observation Service" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<ows:Identifier>$PluginIdentifier</ows:Identifier>
+			<ows:Abstract xml:lang="en">$PluginAbstract</ows:Abstract>
+			<ows:Format>application/xml</ows:Format>
+			<ows:Metadata>
+				<sps:SPSMetadata>
+					<sps:dataAccessType>http://schemas.opengis.net/sos/2.0/sos.xsd
+					</sps:dataAccessType>
+				</sps:SPSMetadata>
+			</ows:Metadata>
+		</ows:Reference>
+	</n52sps:SensorInstanceData>
+	<n52sps:SensorDescriptionData>
+		<n52sps:ProcedureDescriptionFormat>http://www.opengis.net/sensorML/1.0.1
+		</n52sps:ProcedureDescriptionFormat>
+		<n52sps:DownloadLink>$PluginLinkDownload
+		</n52sps:DownloadLink>
+	</n52sps:SensorDescriptionData>
+	<n52sps:SensorTaskingParametersSet>
+		<n52sps:SingleParameterSet>
+			<swe:DataRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:xlink="http://www.w3.org/1225/xlink" xmlns:swe="http://www.opengis.net/swe/2.0"
+				xsi:schemaLocation="http://www.opengis.net/swe/2.0 http://schemas.opengis.net/sweCommon/2.0/swe.xsd">
+				<swe:identifier>PluginTaskIdentifier</swe:identifier>
+				<swe:field name="dateAttivation">
+					<swe:Text optional="false"><!--dateAttivation-->
+					</swe:Text>
+				</swe:field>
+				<swe:field name="dateToExpiry">
+					<swe:Text optional="true"><!--dateToExpiry-->
+					</swe:Text>
+				</swe:field>
+				<swe:field name="dimmer">
+					<swe:Count optional="false"><!--dimmer-->
+					</swe:Count>
+				</swe:field>
+				<swe:field name="frequency">
+					<swe:Count optional="true"><!--frequency-->
+					</swe:Count>
+				</swe:field>
+				<swe:field name="dayoftheweek">
+					<swe:Text optional="true"><!--dayoftheweek-->
+					</swe:Text>
+				</swe:field>
+				<swe:field name="activationhour">
+					<swe:Text optional="true"><!--activationhour-->
+					</swe:Text>
+				</swe:field>
+				<swe:field name="listofday">
+					<swe:Text optional="true"><!--listofday-->
+					</swe:Text>
+				</swe:field>
+				<swe:field name="priority">
+					<swe:Count optional="true"><!--priority-->
+					</swe:Count>
+				</swe:field>	
+			</swe:DataRecord>
+		</n52sps:SingleParameterSet>
+	</n52sps:SensorTaskingParametersSet>
+</n52sps:InsertSensorOffering>

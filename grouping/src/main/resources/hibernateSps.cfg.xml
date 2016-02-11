@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property> -->
+		<!-- <property name="dialect">org.hibernate.spatial.dialect.postgis.PostgisDialect</property> -->
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+<!-- 		<property name="connection.url">jdbc:postgresql://20.39.146.59:5432/dbsos40?autoReconnect=true</property> ?autoReconnect=true serve per poter recuperare il resultset dopo il save
+ -->	<property name="connection.url">jdbc:postgresql://20.39.146.100:5432/sps?autoReconnect=true</property>	
+ 		<property name="connection.username">sos40</property>
+		<property name="connection.password">202</property>
+
+		<property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		
+		<mapping class="eu.sinergis.sunshine.grouping.pojosps.DataAccessTypes"/>
+		<mapping class="eu.sinergis.sunshine.grouping.pojosps.DataResultAccess"/>
+		<mapping class="eu.sinergis.sunshine.grouping.pojosps.SensorConfiguration"/>
+		<mapping class="eu.sinergis.sunshine.grouping.pojosps.SensorDescription"/>
+		<mapping class="eu.sinergis.sunshine.grouping.pojosps.SensorOfferings"/>
+	</session-factory> 
+</hibernate-configuration>
+
