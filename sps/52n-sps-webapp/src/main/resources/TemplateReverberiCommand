@@ -1,0 +1,1 @@
+http://sunshine.sinergis.it/maestro/ws/Action/light_control?PROCEDURE_ID=$idLampada&DIMMERPERCENT=$dimmer&USERNAME=$codespace

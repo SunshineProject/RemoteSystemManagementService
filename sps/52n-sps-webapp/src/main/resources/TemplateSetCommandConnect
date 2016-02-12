@@ -1,0 +1,5 @@
+<CONTROL>
+  <DEST_TYPE>$destType</DEST_TYPE>
+  <DEST_VALUE>$destValue</DEST_VALUE>
+  <COMMAND>$command</COMMAND>
+</CONTROL>

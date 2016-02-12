@@ -1,0 +1,7 @@
+<CONTROL>
+  <DEST_TYPE>$destType</DEST_TYPE>
+  <DEST_VALUE>$destValue</DEST_VALUE>
+  <COMMAND>$command</COMMAND>
+  <COMMAND_EXECUTED>$cmdExecuted</COMMAND_EXECUTED>
+  <CTRLID>$ctrlId</CTRLID>
+</CONTROL>

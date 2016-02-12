@@ -1,0 +1,8 @@
+<CONTROL>
+  <DEST_TYPE>$destType</DEST_TYPE>
+  <DEST_VALUE>$destValue</DEST_VALUE>
+  <COMMAND>$command</COMMAND>
+  <COMMAND_EXECUTED>$cmdExecuted</COMMAND_EXECUTED>
+  <DIMMING_VALUE>$dimmingValue</DIMMING_VALUE>
+  <CTRLID>$ctrlId</CTRLID>
+</CONTROL>
