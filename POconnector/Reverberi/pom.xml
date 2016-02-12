@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>it.sinergis.maestro</groupId>
+  <artifactId>maestro</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>maestro</name>
+  <url>http://maven.apache.org</url>
+  
+  
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<skipTests>true</skipTests>
+		<!-- SVN CONFIGURATIONS -->
+		<continuum.host>srv11svn:8180</continuum.host>
+		<svn.server>srv11svn:9191</svn.server>
+		<svn.section>vsvn/regione_lombardia</svn.section>
+		<svn.connection>scm:svn:http://continuum:continuum@${svn.server}/${svn.section}/trunk/${name}</svn.connection>
+
+		<!-- SONAR CONFIGURATION -->
+		<sonar.host.url>http://srv11svn:9000/</sonar.host.url>
+		<sonar.jdbc.url>jdbc:derby://srv11svn:1528/sonar;create=true</sonar.jdbc.url>
+		<sonar.jdbc.driver>org.apache.derby.jdbc.ClientDriver</sonar.jdbc.driver>
+		<sonar.jdbc.username>sonar</sonar.jdbc.username>
+		<sonar.jdbc.password>sonar</sonar.jdbc.password>
+	</properties>
+  
+  <build>
+		<finalName>${project.name}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<targetJdk>1.6</targetJdk>
+					<sourceEncoding>utf-8</sourceEncoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Created-By>SINERGIS s.r.l.</Created-By>
+							<Built-By>SINERGIS s.r.l.</Built-By>
+							<Implementation-Vendor>SINERGIS s.r.l.</Implementation-Vendor>
+							<Implementation-Version>${project.version}</Implementation-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+  
+  
+  
+  <dependencies>
+    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>3.8.1</version>
+	      <scope>test</scope>
+    </dependency>
+    <dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>1.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.8</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.2.7.SP1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.2.7.Final</version>
+		</dependency>
+		<dependency>
+    		<groupId>net.sourceforge.jtds</groupId>
+   			 <artifactId>jtds</artifactId>
+   			 <version>1.2.8</version>
+   			 <scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+		<!--  
+		<dependency>
+    		<groupId>asm</groupId>
+    		<artifactId>asm</artifactId>
+    		<version>3.3.1</version>
+		</dependency>-->
+  </dependencies>
+</project>
